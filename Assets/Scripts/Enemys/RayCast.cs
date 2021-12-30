@@ -24,12 +24,12 @@ public class RayCast : MonoBehaviour
             Debug.DrawRay(transform.position, vector3 * 100f, Color.red);
             //Debug.Log("Did Hit With Player");
             //Enemy.GetComponent<Unit>().enabled = true;
-            Enemy.GetComponent<NavMeshEnemy>().enabled = true;
+            //Enemy.GetComponent<NavMeshEnemy>().enabled = true;
         }
         else
         {
             //Debug.Log("Did not hit with Player");
-            Enemy.GetComponent<Unit>().enabled = false;
+            //Enemy.GetComponent<Unit>().enabled = false;
             //Enemy.GetComponent<NavMeshEnemy>().enabled = false;
         }
     }

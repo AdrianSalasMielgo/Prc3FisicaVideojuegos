@@ -45,14 +45,14 @@ public class RCPlayer: MonoBehaviour
         {
             //transform.eulerAngles += new Vector3(0, -90, 0);
             op = 1;
-            Player.GetComponent<Move>().Rotate();
+            //Player.GetComponent<Move>().Rotate();
         }
 
         if ((Physics.Raycast(transform.position, transform.forward, 1)) && (Physics.Raycast(transform.position, transform.right, 1)))
         {
             //transform.eulerAngles += new Vector3(0, -90, 0);
             op = 1;
-            Player.GetComponent<Move>().Rotate();
+            //Player.GetComponent<Move>().Rotate();
         }
 
         if (!(Physics.Raycast(transform.position, transform.right, 1)) && cont == 0)
@@ -60,7 +60,7 @@ public class RCPlayer: MonoBehaviour
             //transform.eulerAngles += new Vector3(0, 90, 0);
             cont = 1;
             op = 0;
-            Player.GetComponent<Move>().Rotate();
+            //Player.GetComponent<Move>().Rotate();
         }
         /*
          * left hand
