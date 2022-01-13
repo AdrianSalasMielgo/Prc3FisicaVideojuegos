@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public float moveSpeed;
+    private float moveSpeed;
     //public float DoorSpeed;
-    public bool isGorunded = false;
-    public float force;
+    private bool isGorunded = false;
+    private float force;
 
-    public int life;
-    public float stamina;
+    private int life;
+    private float stamina;
+
+    public Slider BarraVida;
+    public Slider BarraEstamina;
 
     public Rigidbody rb;
     // Variables for the open and close door
@@ -31,19 +35,20 @@ public class Player : MonoBehaviour
         stamina = 10;
         moveSpeed = 5;
         force = 15;
-
     }
 
     void Update()
     {
         Move(moveSpeed);
         KeyControl();
+        //BarraVida.value = life;
+        //BarraEstamina.value = stamina;
     }
 
     void KeyControl()
     {
         // Jump
-        if (Input.GetKeyDown(KeyCode.Space) && isGorunded == true)
+        if (Input.GetKeyDown(KeyCode.Space) && isGorunded == true && stamina >= 2)
         {
             Jump();
         }
@@ -61,6 +66,7 @@ public class Player : MonoBehaviour
         else if (!(Input.GetKey(KeyCode.LeftShift)))
         {
             stamina += 1 * Time.deltaTime;
+            BarraEstamina.value = stamina;
             if (stamina >= 10)
             {
                 stamina = 10;
@@ -85,11 +91,17 @@ public class Player : MonoBehaviour
     {
         isGorunded = false;
         rb.AddForce(0, force, 0, ForceMode.Impulse);
+        stamina -= 2;
+        if (stamina <= 0)
+        {
+            stamina = 0;
+        }
     }
 
     void Run()
     {
         stamina -= 3*Time.deltaTime;
+        BarraEstamina.value = stamina;
         if(stamina <= 0)
         {
             stamina = 0;
