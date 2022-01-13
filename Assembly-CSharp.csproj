@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Enemys\Terrestres\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\Enemys\Aereos\NewBehaviourScript1.cs" />
+    <Compile Include="Assets\Scripts\Player\Disparador.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
