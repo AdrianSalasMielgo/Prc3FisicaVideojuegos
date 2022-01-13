@@ -29,7 +29,8 @@ public class Disparador : MonoBehaviour
 
         //bullets = GameObject.FindGameObjectsWithTag("BalaPlayer");
         GO = GameObject.FindGameObjectWithTag("BalaPlayer");
-        Destroy(GO, 1);
+        Destroy(GO, 0.5f);
+        
         //Debug.Log(bullets.Length);
     }
 }

@@ -43,6 +43,12 @@ public class Player : MonoBehaviour
         KeyControl();
         //BarraVida.value = life;
         //BarraEstamina.value = stamina;
+
+    }
+
+    void DañoRecivido()
+    {
+
     }
 
     void KeyControl()
