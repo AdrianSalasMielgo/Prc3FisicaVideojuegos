@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Disparador : MonoBehaviour
 {
+    //private GameObject[] bullets;
+    private GameObject GO;
     public Rigidbody projectile;
     private Rigidbody InstantiatedProyectile;
     public int projectileSpeed;
@@ -11,6 +13,7 @@ public class Disparador : MonoBehaviour
     void Start()
     {
         projectileSpeed = 20;
+        //bullets = GameObject.FindGameObjectsWithTag("BalaPlayer");
     }
 
     // Update is called once per frame
@@ -19,11 +22,14 @@ public class Disparador : MonoBehaviour
         // Trigger
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-
             InstantiatedProyectile = Instantiate(projectile, transform.position, transform.rotation);
             InstantiatedProyectile.velocity = transform.TransformDirection(new Vector3(0, 0, projectileSpeed));
             Physics.IgnoreCollision(InstantiatedProyectile.GetComponent<Collider>(), transform.root.GetComponent<Collider>());
         }
 
+        //bullets = GameObject.FindGameObjectsWithTag("BalaPlayer");
+        GO = GameObject.FindGameObjectWithTag("BalaPlayer");
+        Destroy(GO, 1);
+        //Debug.Log(bullets.Length);
     }
 }
