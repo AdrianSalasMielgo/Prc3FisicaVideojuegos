@@ -59,14 +59,17 @@
     <Compile Include="Assets\Scripts\Enemys\ESphere.cs" />
     <Compile Include="Assets\Scripts\GameManager\LoadLevelPlay.cs" />
     <Compile Include="Assets\Scripts\Player\RCPlayer.cs" />
+    <Compile Include="Assets\Scripts\Enemys\Terrestres\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\Player\isLive.cs" />
     <Compile Include="Assets\Scripts\Enemys\RayCast.cs" />
     <Compile Include="Assets\Scripts\Enemys\ECube.cs" />
     <Compile Include="Assets\Scripts\Player\WinCondition.cs" />
     <Compile Include="Assets\Scripts\GameManager\LoadLevel.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
-    <Compile Include="Assets\Scripts\Enemys\Terrestres\NewBehaviourScript.cs" />
-    <Compile Include="Assets\Scripts\Enemys\Aereos\NewBehaviourScript1.cs" />
+    <Compile Include="Assets\Scripts\Enemys\Aereos\NavMeshAir.cs" />
+    <Compile Include="Assets\Scripts\Enemys\Aereos\ArmaEnemigoAereo.cs" />
+    <Compile Include="Assets\Scripts\Enemys\Aereos\RCairenemy.cs" />
+    <Compile Include="Assets\Scripts\Enemys\Aereos\TriggerEnemy.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
