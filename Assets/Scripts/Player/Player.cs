@@ -1,33 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public float moveSpeed;
-    public float DoorSpeed;
-    public bool isGorunded = false;
-    public float force;
+    private float moveSpeed;
+    //public float DoorSpeed;
+    private bool isGorunded = false;
+    private float force;
 
-    public int life;
-    public float stamina;
+    private int life;
+    private float stamina;
+
+    public Slider BarraVida;
+    public Slider BarraEstamina;
 
     public Rigidbody rb;
-
     // Variables for the open and close door
+    /*
     public GameObject Door;
     public GameObject Door1;
     public GameObject TC;
     public GameObject DA;
     public GameObject DA1;
     public GameObject DA2;
+    */
 
     public WinCondition win;
 
     void Start()
     {
         life = 100;
-        stamina = 100;
+        stamina = 10;
         moveSpeed = 5;
         force = 15;
     }
@@ -36,11 +41,20 @@ public class Player : MonoBehaviour
     {
         Move(moveSpeed);
         KeyControl();
+        //BarraVida.value = life;
+        //BarraEstamina.value = stamina;
+
+    }
+
+    void DañoRecivido()
+    {
+
     }
 
     void KeyControl()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGorunded == true)
+        // Jump
+        if (Input.GetKeyDown(KeyCode.Space) && isGorunded == true && stamina >= 2)
         {
             Jump();
         }
@@ -49,19 +63,22 @@ public class Player : MonoBehaviour
             rb.AddForce(0, -2.5f, 0, ForceMode.Force);
         }
 
+        // Run
         if (Input.GetKey(KeyCode.LeftShift) && stamina >= 0)
         {
-            Move(moveSpeed * 5);
+            Move(moveSpeed * 2);
             Run();
         }
         else if (!(Input.GetKey(KeyCode.LeftShift)))
         {
-            stamina++;
-            if (stamina >= 100)
+            stamina += 1 * Time.deltaTime;
+            BarraEstamina.value = stamina;
+            if (stamina >= 10)
             {
-                stamina = 100;
+                stamina = 10;
             }
         }
+
     }
 
     void Move(float moveSpeed)
@@ -80,11 +97,17 @@ public class Player : MonoBehaviour
     {
         isGorunded = false;
         rb.AddForce(0, force, 0, ForceMode.Impulse);
+        stamina -= 2;
+        if (stamina <= 0)
+        {
+            stamina = 0;
+        }
     }
 
     void Run()
     {
-        stamina--;
+        stamina -= 3*Time.deltaTime;
+        BarraEstamina.value = stamina;
         if(stamina <= 0)
         {
             stamina = 0;

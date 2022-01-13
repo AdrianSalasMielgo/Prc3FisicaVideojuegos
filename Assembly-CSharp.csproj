@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Enemys\Aereos\RCairenemy.cs" />
     <Compile Include="Assets\Scripts\Enemys\Terrestres\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\Enemys\Aereos\NavMeshAir.cs" />
+    <Compile Include="Assets\Scripts\Player\Disparador.cs" />
     <Compile Include="Assets\Scripts\Player\isLive.cs" />
     <Compile Include="Assets\Scripts\Enemys\RayCast.cs" />
     <Compile Include="Assets\Scripts\Enemys\ECube.cs" />
