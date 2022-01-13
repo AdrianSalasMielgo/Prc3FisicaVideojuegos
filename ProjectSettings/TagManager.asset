@@ -11,6 +11,7 @@ TagManager:
   - Desactivate
   - Wall
   - Ground
+  - Bala
   layers:
   - Default
   - TransparentFX
